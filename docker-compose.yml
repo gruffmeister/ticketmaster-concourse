@@ -21,13 +21,16 @@ services:
     ports: ["8080:8080"]
     volumes: ["./keys/web:/concourse-keys"]
     environment:
-      CONCOURSE_EXTERNAL_URL: http://localhost:8080
+      CONCOURSE_EXTERNAL_URL: http://gracedeployer.ticketline.local
       CONCOURSE_POSTGRES_HOST: db
       CONCOURSE_POSTGRES_USER: concourse_user
       CONCOURSE_POSTGRES_PASSWORD: concourse_pass
       CONCOURSE_POSTGRES_DATABASE: concourse
       CONCOURSE_ADD_LOCAL_USER: test:test
       CONCOURSE_MAIN_TEAM_LOCAL_USER: test
+      CONCOURSE_GITLAB_CLIENT_ID: 9207f5061f1f3f8e26ae79fd2470209a4fc8c057fc20955bbc66753b58be7ee1
+      CONCOURSE_GITLAB_CLIENT_SECRET: 5c6e0152ed91981917193a11c563a465156939085d9bb2a9c0435a56603a2a32
+      CONCOURSE_GITLAB_HOST: http://gruff-git.ticketline.local
     logging:
       driver: "json-file"
       options:
